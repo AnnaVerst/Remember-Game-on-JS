@@ -1,0 +1,112 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  body {
+    height: 100vh;
+    display: flex;
+    background: #060AB2;
+  }
+
+  .rules{
+    text-align: center;
+    vertical-align: middle;
+    width: 320px;
+    height: 250px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -125px 0 0 -125px;
+    font-family:'Times New Roman', Times, serif;
+  }
+    .rules p{
+    padding-bottom: 10px;
+    color: #fff;
+  }
+  .memory-game {
+    width: 600px;
+    height: 720px;
+    margin: auto;
+    display: none;
+    flex-wrap: wrap;
+    perspective: 1000px;
+  }
+  .memory-card {
+    width: calc(16% - 10px);
+    height: calc(16% - 10px);
+    margin: 5px;
+    position: relative;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+.memory-card:active {
+  transform: scale(0.97);
+  transition: transform .2s;
+}
+.memory-card.flip {
+    transform: rotateY(180deg);
+  }
+  
+  .front-face,
+  .back-face {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    position: absolute;
+    border-radius: 5px;
+    background: #1C7CCC;
+    backface-visibility: hidden;
+  }
+  .front-face {
+    transform: rotateY(180deg);
+  }
+  .timer-block{
+      display:flex;
+      position: absolute;
+  }
+  .timer-input{
+      display:flex;
+      margin-top: 10px;
+      float: left;
+      flex-direction: column
+  }
+  .timer-input input{
+    margin-left: 10px;
+    padding: 10px;
+}
+.timer-input input:first-child{
+    background-color: greenyellow;
+}
+.timer-input input:first-child:hover{
+    background-color: rgb(116, 172, 32);
+}
+.timer-input input:nth-of-type(2):hover{
+    background-color: rgb(119, 119, 119);
+}
+.timer-input input:last-child{
+    background-color: red;
+}
+.timer-input input:last-child:hover{
+    background-color: rgb(143, 0, 0);
+}
+#timer{
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 100px;
+    width: 120px;
+    height: 60px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: green;
+    padding: 20px;
+    /* vertical-align: middle; */
+}
+#timer div{
+    width: 50px;
+}
